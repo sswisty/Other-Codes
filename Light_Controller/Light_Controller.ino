@@ -62,6 +62,9 @@ int Z4 = 0;              // Toggle value (0/1) for button 4
 int Z5 = 0;              // Toggle value (0/1) for button 5
 
 
+
+
+// ------------------------- SETUP LOOP ---------------------------------
 void setup() {
   // put your setup code here, to run once:
   
@@ -88,6 +91,8 @@ void setup() {
  
 }
 
+
+// ------------------------- MAIN LOOP -----------------------------
 void loop() {
   // put your main code here, to run repeatedly:
   
@@ -95,20 +100,48 @@ void loop() {
   CheckButtonUpdates();
   
   
+  if (Z0 == 1) {
+    // Button Zero has been pressed!
+    // Description of what happens here...
+    AllOn();
+    
+  }
+  
+  if (Z1 == 1) {
+    // Button 1 has been pressed!
+    // Description of what happens here...
+    
+  }
+  
+  if (Z2 == 1) {
+    // Buttion 2 has been pressed!
+    // Description of what happens here...
+    
+  }
+  
+  if (Z3 == 1) {
+    // Button 3 has been pressed!
+    // Description of what happens here...
+    
+  }
+  
+  if (Z4 == 1) {
+    // Buttion 4 has been pressed!
+    // Description of what happens here...
+    
+  }
+  
+  if (Z5 == 0) {
+    // Button 5 has been pressed!
+    // Description of what happens here...
+    
+    AllOff();
+  }
   
   
   
+  // --- End of main loop
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
 }
 
 
