@@ -91,6 +91,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
+  // Determine if any button is pressed and toggle values if necessary
   CheckButtonUpdates();
   
   

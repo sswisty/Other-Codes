@@ -11,20 +11,28 @@ void CheckButtonUpdates() {
   V5 = analogRead(B5);
   
   // Determine if button is pressed
-  CheckVoltage(V0);
-  CheckVoltage(V1);
-  CheckVoltage(V2);
-  CheckVoltage(V3);
-  CheckVoltage(V4);
-  CheckVoltage(V5);
+  Z0, Z1, Z2, Z3, Z4, Z5 = CheckVoltage(V0, Z0, Z1, Z2, Z3, Z4, Z5);
+  Z1, Z0, Z2, Z3, Z4, Z5 = CheckVoltage(V1, Z1, Z0, Z2, Z3, Z4, Z5);
+  Z2, Z1, Z0, Z3, Z4, Z5 = CheckVoltage(V2, Z2, Z1, Z0, Z3, Z4, Z5);
+  Z3, Z1, Z2, Z0, Z4, Z5 = CheckVoltage(V3, Z3, Z1, Z2, Z0, Z4, Z5);
+  Z4, Z1, Z2, Z3, Z0, Z5 = CheckVoltage(V4, Z4, Z1, Z2, Z3, Z0, Z5);
+  Z5, Z1, Z2, Z3, Z4, Z0 = CheckVoltage(V5, Z5, Z1, Z2, Z3, Z4, Z0);
   
 }
 
 
-void CheckVoltage(int pin) {
+int CheckVoltage(int pin, int keep, int bad1, int bad2, int bad3, int bad4, int bad5) {
   
   if (pin > 4){
-    Z0 = ToggleValue(Z0);
+    keep = 1;
+    bad1 = 0;
+    bad2 = 0;
+    bad3 = 0;
+    bad4 = 0;
+    bad5 = 0;
+    
+    return keep, bad1, bad2, bad3, bad4, bad5;
+    
     // Wait .25sec to eliminate multiple presses
     delay(250);
   }
