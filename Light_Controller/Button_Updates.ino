@@ -40,6 +40,7 @@ int CheckVoltage(int pin, int keep, int bad1, int bad2, int bad3, int bad4, int 
 }
 
 
+// scrapped this as wanted other toggle values to turn off when other is turned on...
 int ToggleValue(int val) {
   if (val == 1){
     val = 0;
