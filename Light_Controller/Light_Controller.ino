@@ -82,6 +82,9 @@ void setup() {
   pinMode(B4, INPUT);
   pinMode(B5, INPUT);
 
+  // Turn all lights off to start
+  AllOff();
+ 
 }
 
 void loop() {
