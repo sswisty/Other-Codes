@@ -54,11 +54,12 @@ int V3 = 0;              // The current voltage on button 3
 int V4 = 0;              // The current voltage on button 4
 int V5 = 0;              // The current voltage on button 5
 
-
-
-
-
-
+int Z0 = 0;              // Toggle value (0/1) for button 0
+int Z1 = 0;              // Toggle value (0/1) for button 1
+int Z2 = 0;              // Toggle value (0/1) for button 2
+int Z3 = 0;              // Toggle value (0/1) for button 3
+int Z4 = 0;              // Toggle value (0/1) for button 4
+int Z5 = 0;              // Toggle value (0/1) for button 5
 
 
 void setup() {
@@ -90,7 +91,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  
+  CheckButtonUpdates();
   
   
   
