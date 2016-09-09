@@ -24,15 +24,15 @@ const int B3 = 3;        // Button 3 Reads to Analog Pin 3
 const int B4 = 4;        // Button 4 Reads to Analog Pin 4
 const int B5 = 5;        // Button 5 Reads to Analog Pin 5
 
-// Relay Pin Locations (count down for wiring ease)
-const int R1 = 12;       // Relay 1 Input on Digital Pin 12
-const int R2 = 11;       // Relay 1 Input on Digital Pin 11
-const int R3 = 10;       // Relay 1 Input on Digital Pin 10
-const int R4 = 9;        // Relay 1 Input on Digital Pin 9
-const int R5 = 8;        // Relay 1 Input on Digital Pin 8
-const int R6 = 7;        // Relay 1 Input on Digital Pin 7
-const int R7 = 6;        // Relay 1 Input on Digital Pin 6
-const int R8 = 5;        // Relay 1 Input on Digital Pin 5
+// Relay Pin Locations (count down for wiring ease) (check pins 4 and 5 ... were not working)
+const int R1 = 13;       // Relay 1 Input on Digital Pin 12
+const int R2 = 12;       // Relay 1 Input on Digital Pin 11
+const int R3 = 11;       // Relay 1 Input on Digital Pin 10
+const int R4 = 10;        // Relay 1 Input on Digital Pin 9
+const int R5 = 9;        // Relay 1 Input on Digital Pin 8
+const int R6 = 8;        // Relay 1 Input on Digital Pin 7
+const int R7 = 7;        // Relay 1 Input on Digital Pin 6
+const int R8 = 6;        // Relay 1 Input on Digital Pin 5
 
 // Other Constants
 const int StatLED = 13;  // Status LED on Digital Pin 13
