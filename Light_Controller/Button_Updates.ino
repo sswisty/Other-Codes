@@ -10,34 +10,97 @@ void CheckButtonUpdates() {
   V4 = analogRead(B4);
   V5 = analogRead(B5);
   
-  // Determine if button is pressed
-  Z0, Z1, Z2, Z3, Z4, Z5 = CheckVoltage(V0, Z0, Z1, Z2, Z3, Z4, Z5);
-  Z1, Z0, Z2, Z3, Z4, Z5 = CheckVoltage(V1, Z1, Z0, Z2, Z3, Z4, Z5);
-  Z2, Z1, Z0, Z3, Z4, Z5 = CheckVoltage(V2, Z2, Z1, Z0, Z3, Z4, Z5);
-  Z3, Z1, Z2, Z0, Z4, Z5 = CheckVoltage(V3, Z3, Z1, Z2, Z0, Z4, Z5);
-  Z4, Z1, Z2, Z3, Z0, Z5 = CheckVoltage(V4, Z4, Z1, Z2, Z3, Z0, Z5);
-  Z5, Z1, Z2, Z3, Z4, Z0 = CheckVoltage(V5, Z5, Z1, Z2, Z3, Z4, Z0);
+  //Serial.print("Voltage Reading on A0: ");
+  //Serial.println(V0); // look at voltage reading for button 1
   
+  // Determine if button is pressed
+  CheckVoltages();
+  
+  //Serial.print("Value of Z0: ");
+  //Serial.println(Z0);
 }
 
 
-int CheckVoltage(int pin, int keep, int bad1, int bad2, int bad3, int bad4, int bad5) {
+void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4, int bad5) {
+  // agalogRead outputs value from 0-1023 (0-5V)
+  // Quarter second delay to account for multiple presses
   
-  if (pin > 4){
-    keep = 1;
-    bad1 = 0;
-    bad2 = 0;
-    bad3 = 0;
-    bad4 = 0;
-    bad5 = 0;
-    
-    return keep, bad1, bad2, bad3, bad4, bad5;
-    
-    // Wait .25sec to eliminate multiple presses
+  // Button 0
+  if (V0 > 900) {
+    Serial.println("Button 0 tripped");
+    Z0 = 1;
+    Z1 = 0;
+    Z2 = 0;
+    Z3 = 0;
+    Z4 = 0;
+    Z5 = 0;
+    delay(250);
+  }
+  
+  // Button 1
+  if (V1 > 900) {
+    Serial.println("Button 1 tripped");
+    Z1 = 1;
+    Z0 = 0;
+    Z2 = 0;
+    Z3 = 0;
+    Z4 = 0;
+    Z5 = 0;
+    delay(250);
+  }
+  
+  // Button 2
+  if (V2 > 900) {
+    Serial.println("Button 2 tripped");
+    Z2 = 1;
+    Z1 = 0;
+    Z0 = 0;
+    Z3 = 0;
+    Z4 = 0;
+    Z5 = 0;
+    delay(250);
+  }
+  
+  // Button 3
+  if (V3 > 900) {
+    Serial.println("Button 3 tripped");
+    Z3 = 1;
+    Z1 = 0;
+    Z2 = 0;
+    Z0 = 0;
+    Z4 = 0;
+    Z5 = 0;
+    delay(250);
+  }
+  
+  /* Pin A4 seems to be tied to A0 ... closing button for now
+  // Button 4
+  if (V0 > 900) {
+    Serial.println("Button 4 tripped");
+    Z4 = 1;
+    Z1 = 0;
+    Z2 = 0;
+    Z3 = 0;
+    Z0 = 0;
+    Z5 = 0;
+    delay(250);
+  }
+  */
+  
+  // Button 5
+  if (V5 > 900) {
+    Serial.println("Button 5 tripped");
+    Z5 = 1;
+    Z1 = 0;
+    Z2 = 0;
+    Z3 = 0;
+    Z4 = 0;
+    Z0 = 0;
     delay(250);
   }
   
 }
+
 
 
 // scrapped this as wanted other toggle values to turn off when other is turned on...

@@ -24,15 +24,15 @@ const int B3 = 3;        // Button 3 Reads to Analog Pin 3
 const int B4 = 4;        // Button 4 Reads to Analog Pin 4
 const int B5 = 5;        // Button 5 Reads to Analog Pin 5
 
-// Relay Pin Locations
-const int R1 = 5;        // Relay 1 Input on Digital Pin 5
-const int R2 = 6;        // Relay 1 Input on Digital Pin 6
-const int R3 = 7;        // Relay 1 Input on Digital Pin 7
-const int R4 = 8;        // Relay 1 Input on Digital Pin 8
-const int R5 = 9;        // Relay 1 Input on Digital Pin 9
-const int R6 = 10;       // Relay 1 Input on Digital Pin 10
-const int R7 = 11;       // Relay 1 Input on Digital Pin 11
-const int R8 = 12;       // Relay 1 Input on Digital Pin 12
+// Relay Pin Locations (count down for wiring ease)
+const int R1 = 12;       // Relay 1 Input on Digital Pin 12
+const int R2 = 11;       // Relay 1 Input on Digital Pin 11
+const int R3 = 10;       // Relay 1 Input on Digital Pin 10
+const int R4 = 9;        // Relay 1 Input on Digital Pin 9
+const int R5 = 8;        // Relay 1 Input on Digital Pin 8
+const int R6 = 7;        // Relay 1 Input on Digital Pin 7
+const int R7 = 6;        // Relay 1 Input on Digital Pin 6
+const int R8 = 5;        // Relay 1 Input on Digital Pin 5
 
 // Other Constants
 const int StatLED = 13;  // Status LED on Digital Pin 13
@@ -67,6 +67,11 @@ int Z5 = 0;              // Toggle value (0/1) for button 5
 // ------------------------- SETUP LOOP ---------------------------------
 void setup() {
   // put your setup code here, to run once:
+  
+  // Serial terminal to veiw code
+  Serial.begin(115200);
+  Serial.setTimeout(100);
+  
   
   // Initilaize Realy Pins
   pinMode(R1, OUTPUT);
@@ -105,6 +110,7 @@ void loop() {
     // Description of what happens here...
     AllOn();
     
+    Serial.println("All Lights on");
   }
   
   if (Z1 == 1) {
@@ -131,7 +137,7 @@ void loop() {
     
   }
   
-  if (Z5 == 0) {
+  if (Z5 == 1) {
     // Button 5 has been pressed!
     // Description of what happens here...
     
