@@ -43,8 +43,9 @@ const int StatLED = 13;  // Status LED on Digital Pin 13
 // --------------------- DYNAMIC VARIABLES ------------------------
 // Used for timing purposes
 int current_time = 0;    // Reads the current time from millis()
-int previoius_time = 0;  // The previous stored time
+int previous_time = 0;   // The previous stored time
 int delta_T = 0;         // The difference between current and previous times
+int interval = 5;        // Interval between alternating lights
 
 // Used for button presses
 int V0 = 0;              // The current voltage on button 0
@@ -101,13 +102,18 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
+  // Get the current time, convert into seconds from ms
+  current_time = millis();
+  current_time = current_time/1000;
+  
   // Determine if any button is pressed and toggle values if necessary
   CheckButtonUpdates();
   
   
   if (Z0 == 1) {
     // Button Zero has been pressed!
-    // Description of what happens here...
+    // This button turns on all lights for all time.
+    
     AllOn();
     
     Serial.println("All Lights on");
@@ -115,7 +121,14 @@ void loop() {
   
   if (Z1 == 1) {
     // Button 1 has been pressed!
-    // Description of what happens here...
+    // This button turns on 4 lights at a time and alternates between 
+    // two sets of four. The interval of alternation can be changed below,
+    // default at 5 seconds.
+   
+   interval = 5;
+   AlternateFour(interval);
+  
+  Serial.println("Alternating lights at 5 sec interval"); 
     
   }
   
