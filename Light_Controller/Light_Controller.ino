@@ -140,8 +140,9 @@ void loop() {
   if (Z5 == 1) {
     // Button 5 has been pressed!
     // Description of what happens here...
-    
     AllOff();
+    
+    Serial.println("All lights off");
   }
   
   
