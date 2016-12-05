@@ -24,15 +24,15 @@ const int B3 = 3;        // Button 3 Reads to Analog Pin 3
 const int B4 = 4;        // Button 4 Reads to Analog Pin 4
 const int B5 = 5;        // Button 5 Reads to Analog Pin 5
 
-// Relay Pin Locations (count down for wiring ease) (check pins 4 and 5 ... were not working)
-const int R1 = 13;       // Relay 1 Input on Digital Pin 12
-const int R2 = 12;       // Relay 1 Input on Digital Pin 11
-const int R3 = 11;       // Relay 1 Input on Digital Pin 10
-const int R4 = 10;        // Relay 1 Input on Digital Pin 9
-const int R5 = 9;        // Relay 1 Input on Digital Pin 8
-const int R6 = 8;        // Relay 1 Input on Digital Pin 7
-const int R7 = 7;        // Relay 1 Input on Digital Pin 6
-const int R8 = 6;        // Relay 1 Input on Digital Pin 5
+// Relay Pin Locations (check pins 4 and 5 ... were not working)
+const int R1 = 2;        // Relay 1 Input on Digital Pin 2
+const int R2 = 3;        // Relay 1 Input on Digital Pin 3
+const int R3 = 4;        // Relay 1 Input on Digital Pin 4
+const int R4 = 5;        // Relay 1 Input on Digital Pin 5
+const int R5 = 6;        // Relay 1 Input on Digital Pin 6
+const int R6 = 7;        // Relay 1 Input on Digital Pin 7
+const int R7 = 8;        // Relay 1 Input on Digital Pin 8
+const int R8 = 9;        // Relay 1 Input on Digital Pin 9
 
 // Other Constants
 const int StatLED = 13;  // Status LED on Digital Pin 13
@@ -42,7 +42,7 @@ const int StatLED = 13;  // Status LED on Digital Pin 13
 
 // --------------------- DYNAMIC VARIABLES ------------------------
 // Used for timing purposes
-int current_time = 0;    // Reads the current time from millis()
+unsigned long current_time = 0;    // Reads the current time from millis()
 int previous_time = 0;   // The previous stored time
 int delta_T = 0;         // The difference between current and previous times
 int interval = 5;        // Interval between alternating lights
@@ -104,7 +104,8 @@ void loop() {
   
   // Get the current time, convert into seconds from ms
   current_time = millis();
-  current_time = current_time/1000;
+  //current_time = current_time/1000;
+  Serial.println(current_time);
   
   // Determine if any button is pressed and toggle values if necessary
   CheckButtonUpdates();
@@ -125,7 +126,7 @@ void loop() {
     // two sets of four. The interval of alternation can be changed below,
     // default at 5 seconds.
    
-   interval = 5;
+   interval = 5000;
    AlternateFour(interval);
   
   Serial.println("Alternating lights at 5 sec interval"); 

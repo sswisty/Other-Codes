@@ -4,8 +4,10 @@
 void AlternateFour(int time_pause) {
   
   delta_T = (current_time - previous_time);
+
+  Serial.println(delta_T);
   
-  if (delta_T > time_pause) {
+  if (delta_T > time_pause)  {
     // Turn on odd numbered relays (1,3,5,7)
     OddsOn();
   }

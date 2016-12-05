@@ -26,7 +26,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   // Quarter second delay to account for multiple presses
   
   // Button 0
-  if (V0 > 900) {
+  if (V0 > 500) {
     Serial.println("Button 0 tripped");
     Z0 = 1;
     Z1 = 0;
@@ -38,7 +38,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   }
   
   // Button 1
-  if (V1 > 900) {
+  if (V1 > 500) {
     Serial.println("Button 1 tripped");
     Z1 = 1;
     Z0 = 0;
@@ -50,7 +50,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   }
   
   // Button 2
-  if (V2 > 900) {
+  if (V2 > 500) {
     Serial.println("Button 2 tripped");
     Z2 = 1;
     Z1 = 0;
@@ -62,7 +62,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   }
   
   // Button 3
-  if (V3 > 900) {
+  if (V3 > 500) {
     Serial.println("Button 3 tripped");
     Z3 = 1;
     Z1 = 0;
@@ -75,7 +75,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   
   /* Pin A4 seems to be tied to A0 ... closing button for now
   // Button 4
-  if (V0 > 900) {
+  if (V0 > 500) {
     Serial.println("Button 4 tripped");
     Z4 = 1;
     Z1 = 0;
@@ -88,7 +88,7 @@ void CheckVoltages(){//int pin, int keep, int bad1, int bad2, int bad3, int bad4
   */
   
   // Button 5
-  if (V5 > 900) {
+  if (V5 > 500) {
     Serial.println("Button 5 tripped");
     Z5 = 1;
     Z1 = 0;
