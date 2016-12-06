@@ -17,12 +17,12 @@ Use for Mills Hall Suite 561
 
 // --------------------- CONSTANT VARIABLES ------------------------
 // Button Pin Locations (some are lowercase as B0, B1 are binary numbers)
-const int b0 = 0;        // Button 0 Reads to Analog Pin 0 
-const int b1 = 1;        // Button 1 Reads to Analog Pin 1
-const int B2 = 2;        // Button 2 Reads to Analog Pin 2
-const int B3 = 3;        // Button 3 Reads to Analog Pin 3
-const int B4 = 4;        // Button 4 Reads to Analog Pin 4
-const int B5 = 5;        // Button 5 Reads to Analog Pin 5
+const int b0 = A0;       // Button 0 Reads to Analog Pin 0 
+const int b1 = A1;       // Button 1 Reads to Analog Pin 1
+const int B2 = A2;       // Button 2 Reads to Analog Pin 2
+const int B3 = A3;       // Button 3 Reads to Analog Pin 3
+const int B4 = A4;       // Button 4 Reads to Analog Pin 4
+const int B5 = A5;       // Button 5 Reads to Analog Pin 5
 
 // Relay Pin Locations (check pins 4 and 5 ... were not working)
 const int R1 = 2;        // Relay 1 Input on Digital Pin 2
@@ -43,7 +43,7 @@ const int StatLED = 13;  // Status LED on Digital Pin 13
 // --------------------- DYNAMIC VARIABLES ------------------------
 // Used for timing purposes
 unsigned long current_time = 0;    // Reads the current time from millis()
-int previous_time = 0;   // The previous stored time
+unsigned long previous_time = 0;   // The previous stored time
 int delta_T = 0;         // The difference between current and previous times
 int interval = 5;        // Interval between alternating lights
 
@@ -105,7 +105,7 @@ void loop() {
   // Get the current time, convert into seconds from ms
   current_time = millis();
   //current_time = current_time/1000;
-  Serial.println(current_time);
+  //Serial.println(current_time);
   
   // Determine if any button is pressed and toggle values if necessary
   CheckButtonUpdates();
