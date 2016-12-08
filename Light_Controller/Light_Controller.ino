@@ -102,10 +102,12 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  // Get the current time, convert into seconds from ms
+  // Get the current time and delta time
   current_time = millis();
-  //current_time = current_time/1000;
+  delta_T = (current_time - previous_time);
+  
   //Serial.println(current_time);
+  
   
   // Determine if any button is pressed and toggle values if necessary
   CheckButtonUpdates();
@@ -116,6 +118,9 @@ void loop() {
     // This button turns on all lights for all time.
     
     AllOn();
+
+    // Keep previous time the current time
+    previous_time = current_time;
     
     Serial.println("All Lights on");
   }
@@ -155,6 +160,9 @@ void loop() {
     // Button 5 has been pressed!
     // Description of what happens here...
     AllOff();
+
+    // Keep previous time the current time
+    previous_time = current_time;
     
     Serial.println("All lights off");
   }

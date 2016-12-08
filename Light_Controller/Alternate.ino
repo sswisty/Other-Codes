@@ -3,9 +3,12 @@
 
 void AlternateFour(int time_pause) {
   
-  delta_T = (current_time - previous_time);
 
   Serial.println(delta_T);
+  if (delta_T < time_pause)  {
+    // Turn on evend numbered relays (2,4,6,8)
+    EvensOn();
+  }
   
   if (delta_T > time_pause)  {
     // Turn on odd numbered relays (1,3,5,7)
@@ -13,10 +16,7 @@ void AlternateFour(int time_pause) {
   }
   
   if (delta_T > 2*time_pause) {
-    // Turn on even numbered relays (2,4,6,8)
-    EvensOn();
-    
-    // prev time = current time, allows delta_T to go back to zero
+    // Reset previous time
     previous_time = current_time;
   }
   
