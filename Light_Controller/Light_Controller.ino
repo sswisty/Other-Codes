@@ -24,7 +24,7 @@ const int B3 = A3;       // Button 3 Reads to Analog Pin 3
 const int B4 = A4;       // Button 4 Reads to Analog Pin 4
 const int B5 = A5;       // Button 5 Reads to Analog Pin 5
 
-// Relay Pin Locations (check pins 4 and 5 ... were not working)
+// Relay Pin Locations 
 const int R1 = 2;        // Relay 1 Input on Digital Pin 2
 const int R2 = 3;        // Relay 1 Input on Digital Pin 3
 const int R3 = 4;        // Relay 1 Input on Digital Pin 4
@@ -84,7 +84,7 @@ void setup() {
   pinMode(R7, OUTPUT);
   pinMode(R8, OUTPUT);
   
-  // Initilaize Button Pins (need to do this?)
+  // Initilaize Button Pins 
   pinMode(b0, INPUT);
   pinMode(b1, INPUT);
   pinMode(B2, INPUT);
