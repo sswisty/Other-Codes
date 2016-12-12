@@ -3,8 +3,9 @@
 
 void AlternateFour(int time_pause) {
   
-
-  Serial.println(delta_T);
+  
+  Serial.print("Delta Time: \t");
+  Serial.println(delta_T/1000);
   if (delta_T < time_pause)  {
     // Turn on evend numbered relays (2,4,6,8)
     EvensOn();

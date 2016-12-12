@@ -106,7 +106,8 @@ void loop() {
   current_time = millis();
   delta_T = (current_time - previous_time);
   
-  //Serial.println(current_time);
+  Serial.print("Current time: \t");      // Print the current time
+  Serial.println(current_time/1000);     // in seconds
   
   
   // Determine if any button is pressed and toggle values if necessary
@@ -144,6 +145,9 @@ void loop() {
     // Every iteration of light blink resets the random blinking itervals.
     
     Randomize();
+    
+    // Keep previous time the current time
+    previous_time = current_time;
     
     Serial.println("Randomize light blinking");
     

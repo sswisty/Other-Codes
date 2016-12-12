@@ -40,8 +40,10 @@ void Randomize() {
     val1 = ToggleLight(R1, val1);
     
     time1 = current_time;   // Reset timer for light 1
-    rand1 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand1 = random(2,20);   // Define a new blink delay (half second intervals)
     rand1 = rand1*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 1 toggled!");
     
   }
   
@@ -50,8 +52,10 @@ void Randomize() {
     val2 = ToggleLight(R2, val2);
     
     time2 = current_time;   // Reset timer for light 2
-    rand2 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand2 = random(2,20);   // Define a new blink delay (half second intervals)
     rand2 = rand2*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 2 toggled!");
     
   }
   
@@ -60,8 +64,10 @@ void Randomize() {
     val3 = ToggleLight(R3, val3);
     
     time3 = current_time;   // Reset timer for light 3
-    rand3 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand3 = random(2,20);   // Define a new blink delay (half second intervals)
     rand3 = rand3*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 3 toggled!");
     
   }
   
@@ -70,8 +76,10 @@ void Randomize() {
     val4 = ToggleLight(R4, val4);
     
     time4 = current_time;   // Reset timer for light 4
-    rand4 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand4 = random(2,20);   // Define a new blink delay (half second intervals)
     rand4 = rand4*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 4 toggled!");
     
   }
   
@@ -80,8 +88,10 @@ void Randomize() {
     val5 = ToggleLight(R5, val5);
     
     time5 = current_time;   // Reset timer for light 5
-    rand5 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand5 = random(2,20);   // Define a new blink delay (half second intervals)
     rand5 = rand5*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 5 toggled!");
     
   }
   
@@ -90,8 +100,10 @@ void Randomize() {
     val6 = ToggleLight(R6, val6);
     
     time6 = current_time;   // Reset timer for light 6
-    rand6 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand6 = random(2,20);   // Define a new blink delay (half second intervals)
     rand6 = rand6*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 6 toggled!");
     
   }
   
@@ -100,8 +112,10 @@ void Randomize() {
     val7 = ToggleLight(R7, val7);
     
     time7 = current_time;   // Reset timer for light 7
-    rand7 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand7 = random(2,20);   // Define a new blink delay (half second intervals)
     rand7 = rand7*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 7 toggled!");
     
   }
   
@@ -110,8 +124,10 @@ void Randomize() {
     val8 = ToggleLight(R8, val8);
     
     time8 = current_time;   // Reset timer for light 8
-    rand8 = random(1,20);   // Define a new blink delay (half second intervals)
+    rand8 = random(2,20);   // Define a new blink delay (half second intervals)
     rand8 = rand8*500;      // Put delay into milliseconds
+    
+    Serial.println("Light 8 toggled!");
     
   }
   
@@ -120,7 +136,7 @@ void Randomize() {
 
 int ToggleLight(int RN, int toggle) {
   
-  if (toggle) {
+  if (toggle = 1) {
     digitalWrite(RN, LOW);    // Turn relay N on
     toggle = 0;               // Toggle the toggle
   }
