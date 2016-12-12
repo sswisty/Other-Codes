@@ -140,7 +140,12 @@ void loop() {
   
   if (Z2 == 1) {
     // Buttion 2 has been pressed!
-    // Description of what happens here...
+    // This button sets random intervals for blinking for all 8 lights.
+    // Every iteration of light blink resets the random blinking itervals.
+    
+    Randomize();
+    
+    Serial.println("Randomize light blinking");
     
   }
   
